@@ -3,33 +3,27 @@
 # Define your reusable functions here:
 # Make sure each function only does ONE thing!!!!!!!!!!!
 
-
+import mathsfunc
 
 ###########################################
 
 def weird_calculation():
     # get the length and width of the first triangle from the user
-    opp1 = float(input("Enter your first triangle's opposite side length: "))
-    adj1 = float(input("Enter your first triangle's adjacent side length: "))
+    opp1 = mathsfunc.sideinput("first", "opposite")
+    adj1 = mathsfunc.sideinput("first", "adjacent")
 
     # work out the hyp
-    import math
-    hyp1 = math.sqrt(opp1**2 + adj1**2)
+    hyp1 = mathsfunc.pythagorus(opp1, adj1)
 
     # get the length and width of the second triangle from the user
-    opp2 = float(input("Enter your second triangle's opposite side length: "))
-    adj2 = float(input("Enter your second triangle's adjacent side length: "))
-
+    opp2 = mathsfunc.sideinput("second", "opposite")
+    adj2 = mathsfunc.sideinput("second", "adjacent")
+    
     # work out the hyp
-    import math
-    hyp2 = math.sqrt(opp2**2 + adj2**2)
+    hyp2 = mathsfunc.pythagorus(opp2, adj2)
 
     # create a third triangle with the hyp1 as the opp and hyp2 as the adj
-    opp3 = hyp1
-    adj3 = hyp2
-    
-    import math
-    hyp3 = math.sqrt(opp3**2 + adj3**2)
+    hyp3 = mathsfunc.pythagorus(hyp1,hyp2)
     return hyp3
 
 weird_answer = weird_calculation()
